@@ -10,17 +10,19 @@
 ### Alternative Options:
 - Clone the repository and run it locally
 
-## Overview
+## 👁️ Overview
 This tutorial demonstrates land cover classification using Sentinel-2 satellite imagery and spectral indices. The workflow classifies pixels into five main categories: Water, Bare Soil, Urban, Field, and Forest using a rule-based approach.
 
-## Key Features
+## ⭐ Key Features
 - **Multi-Index Analysis**: Combines NDVI (vegetation), MNDWI (water), BSI/BI (bare soil), NUAI/NDBI (urban), and CHM (canopy height)
-- **Hierarchical Classification**: Sequential rule-based algorithm with priority-based logic (Water → Bare Soil → Urban → Vegetation)
+- **Hierarchical Classification**: Sequential rule-based algorithm with priority-based logic (Water → Bare Soil → Urban → Field → Forest)
 - **IGN Data Integration**: Incorporates French IGN elevation models (DSM/DTM) to compute Canopy Height Model (CHM)
 
-## Classification Logic
-1. **Water**: Detected first using MNDWI > 0
-2. **Bare Soil**: Two detection paths - BSI-based (agricultural) or BI-based (bright surfaces)
-3. **Urban**: Spectral indices (NUAI, NDBI) excluding bare soil areas
-4. **Field/Forest Split**: CHM threshold (2.5m) separates low vegetation (fields) from tall vegetation (forests)
-5. **NDVI Refinement**: Final thresholds ensure accurate vegetation classification
+## 🤖 Classification Logic
+1. **Water first**: most distinctive with MNDWI
+2. **Bare Soil**: Before urban (similar spectral signatures)
+3. **Urban**: After bare soil, using NUAI range + NDBI + BI
+4. **Field third**: Medium NDVI + medium/low height
+5. **Forest**: High NDVI + tall height
+
+
