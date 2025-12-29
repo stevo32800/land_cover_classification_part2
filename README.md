@@ -1,5 +1,15 @@
 # Land Cover Classification from Sentinel-2 Imagery
 
+## 📓 Viewing the Notebook
+
+⚠️ **Note:** This notebook is too large to be displayed directly on GitHub due to its size and embedded visualizations.
+
+**Please use NBViewer to view the complete notebook:**  
+👉 **[Open in NBViewer](https://nbviewer.org/github/stevo32800/land_cover_classification_part2/blob/main/classify_pixel_part2.ipynb)**
+
+### Alternative Options:
+- Clone the repository and run it locally
+
 ## Overview
 This tutorial demonstrates land cover classification using Sentinel-2 satellite imagery and spectral indices. The workflow classifies pixels into five main categories: Water, Bare Soil, Urban, Field, and Forest using a rule-based approach.
 
